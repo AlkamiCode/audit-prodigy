@@ -83,6 +83,7 @@
 		});
 
 		$(".fc-toolbar > div:nth-child(2)").after("<h3>Finance Project</h3>");
+		$(".fc-day-header").after("<th class='fc-day-header fc-widget-header'>Project Total Hours <span #id='total-project-hours'> 50<span></th>")
 		$(".button-collapse").sideNav();
 	});
 
@@ -103,6 +104,11 @@
 	#calendar {
 		max-width: 95%;
 		margin: 0 auto;
+	}
+
+	th.fc-day-header.fc-widget-header.fc-fri {
+    text-align: left;
+    padding-left: 5%;
 	}
 
 </style>
