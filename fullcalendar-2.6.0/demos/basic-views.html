@@ -82,10 +82,72 @@
 			]
 		});
 
-		// $(".fc-toolbar > div:nth-child(1)").before("<h5>Finance Project</h5>");
+		$(".fc-toolbar > div:nth-child(3)").after("<h5 class='project-name'>Finance Project</h5>");
 		$("div.fc-center > h2").css("font-size", "1.2em")
 		$(".fc-day-header").after("<th class='fc-day-header fc-widget-header total-hours-header'>Total Project Hours: <span #id='total-project-hours'> 50<span></th>")
 		$(".button-collapse").sideNav();
+		$(".fc-body").hide()
+
+		// var newEvent = new Object();
+
+		// newEvent.title = "Phase Ultra Ultra";
+		// newEvent.start = new Date();
+		// newEvent.allDay = false;
+		// $('#calendar').fullCalendar( 'renderEvent', newEvent );
+
+		// $(".fc-today").append("<div class='container'>" +
+		//    "<div class='card blue-grey darken-1'>" +
+		//       "<div class='card-content white-text pull-m4'>" +
+		//          "<div class='row>'>" +
+		//           "<div class='col s12 m12 l12'>" +
+		//              "<span class='card-title'>Phase: Travel</span>" +
+		//            "</div>" +
+		// 				   "<div class='col s3 m3'>70% Complete</div>" +
+		//            "<div class='progress col s7 m7'>" +
+		// 				     "<div class='determinate' style='width: 70%'></div>" +
+		// 				   "</div>" +
+		//          "</div>" +
+		//        "</div>" +
+
+		//      "<form action='#'>" +
+		//        "<div class='row'>" +
+		//          "<div class='col s12 m12 l12'>" +
+		//            "<div class='input-field col s3 m3 l4'>" +
+		//             "<input type='text' placeholder='hours'>" +
+		//            "</div>" +
+		//            "<div class='input-field col sm9 m9 l8'>" +
+		//              "<input type='text' placeholder='Comments' id='textarea1' class='materialize-textarea'>" +
+		//            "</div>" +
+		//          "</div>" +
+		//        "</div>" +
+
+		//        "<table class='col s12 m4 l8'>" +
+		//          "<thead>" +
+		//            "<tr>" +
+		//              "<th data-field='id'>Actual</th>" +
+		//              "<th data-field='name'>Scheduled</th>" +
+		//              "<th data-field='price'>Remaining</th>" +
+		//              "<th data-field='price'>ETC</th>" +
+		//            "</tr>" +
+		//          "</thead>" +
+
+		//          "<tbody>" +
+		//            "<tr>" +
+		//              "<td>100</td>" +
+		//              "<td>800</td>" +
+		//              "<td>700</td>" +
+		//              "<td><input type='text' placeholder='ETC Hours'></td>" +
+		//            "</tr>" +
+		//          "</tbody>" +
+		//        "</table>" +
+
+		//        "<div class='col s12 m4 l2'>" +
+		//          "<button class='btn waves-effect waves-light right' type='submit' name='action'>Submit</button>" +
+		//        "</div>" +
+		//      "</form>" +
+		//    "</div>" +
+		// "</div>")
+
 	});
 
 </script>
@@ -102,6 +164,7 @@
 		display: flex;
     min-height: 100vh;
     flex-direction: column;
+		background-color: #8c489f;
 	}
 
 	main {
@@ -113,7 +176,11 @@
 		margin: 0 auto;
 	}
 
-	th.fc-day-header.fc-widget-header.fc-fri {
+	.nav-wrapper {
+		background-color: #2bbbad;
+	}
+
+	th.fc-day-header.fc-widget-header.fc {
     text-align: left;
     padding-left: 5%;
 	}
@@ -129,6 +196,7 @@
 
 	footer.page-footer {
 		padding-top: 1px;
+		background-color: #2bbbad;
 	}
 
 	img.responsive-img {
@@ -140,6 +208,34 @@
 	.card-content.white-text {
 		padding-bottom: 0;
 		padding-top: 0;
+	}
+
+	.card.blue-grey.darken-1 {
+		margin-bottom: 15%;
+	}
+
+	.fc th, .fc td {
+		border-width: 0px;
+	}
+
+	.blue-grey.darken-1 {
+    background-color: #4E4E88 !important;
+	}
+
+	button {
+		background-color: #8c489f;
+	}
+
+	.fc-toolbar {
+		margin-top: 1em;
+	}
+
+	.fc-center {
+		margin-top: 3%;
+	}
+
+	.project-name {
+		margin-top: 0px;
 	}
 
 </style>
@@ -162,26 +258,23 @@
 	  </div>
 	</nav>
 	<main>
-		<div class="project-name">
-			<h5>Finance Project</h5>
-		</div>
 
 		<div id="calendar">
 		</div>
 
 		<div class="container">
-		    <div class="card blue-grey darken-1">
-		      <div class="card-content white-text pull-m4">
-		        <div class="row>">
-		          <div class="col s12 m12 l12">
-		            <span class="card-title">Phase: Travel</span>
-		          </div>
-						  <div class="col s3 m3">70% Complete</div>
-		          <div class="progress col s7 m7">
-						    <div class="determinate" style="width: 70%"></div>
-						  </div>
-		        </div>
-		      </div>
+	    <div class="card blue-grey darken-1">
+	      <div class="card-content white-text pull-m4">
+	        <div class="row>">
+	          <div class="col s12 m12 l12">
+	            <span class="card-title">Phase: Travel</span>
+	          </div>
+					  <div class="col s3 m3">70% Complete</div>
+	          <div class="progress col s7 m7">
+					    <div class="determinate" style="width: 70%"></div>
+					  </div>
+	        </div>
+	      </div>
 
 		    <form action="#">
 		      <div class="row">
@@ -193,7 +286,6 @@
 		            <input type="text" placeholder="Comments" id="textarea1" class="materialize-textarea">
 		          </div>
 		        </div>
-
 		      </div>
 
 		      <table class="col s12 m4 l8">
@@ -205,7 +297,6 @@
 		            <th data-field="price">ETC</th>
 		          </tr>
 		        </thead>
-
 		        <tbody>
 		          <tr>
 		            <td>100</td>
@@ -215,7 +306,57 @@
 		          </tr>
 		        </tbody>
 		      </table>
+		      <div class="col s12 m4 l2">
+		        <button class="btn waves-effect waves-light right" type="submit" name="action">Submit</button>
+		      </div>
+		    </form>
+		  </div>
+		</div>
 
+			<div class="container">
+	    <div class="card blue-grey darken-1">
+	      <div class="card-content white-text pull-m4">
+	        <div class="row>">
+	          <div class="col s12 m12 l12">
+	            <span class="card-title">Phase: Field Work</span>
+	          </div>
+					  <div class="col s3 m3">30% Complete</div>
+	          <div class="progress col s7 m7">
+					    <div class="determinate" style="width: 30%"></div>
+					  </div>
+	        </div>
+	      </div>
+
+		    <form action="#">
+		      <div class="row">
+		        <div class="col s12 m12 l12">
+		          <div class="input-field col s3 m3 l4">
+		            <input type="text" placeholder="hours">
+		          </div>
+		          <div class="input-field col sm9 m9 l8">
+		            <input type="text" placeholder="Comments" id="textarea1" class="materialize-textarea">
+		          </div>
+		        </div>
+		      </div>
+
+		      <table class="col s12 m4 l8">
+		        <thead>
+		          <tr>
+		            <th data-field="id">Actual</th>
+		            <th data-field="name">Scheduled</th>
+		            <th data-field="price">Remaining</th>
+		            <th data-field="price">ETC</th>
+		          </tr>
+		        </thead>
+		        <tbody>
+		          <tr>
+		            <td>50</td>
+		            <td>400</td>
+		            <td>350</td>
+		            <td><input type="text" placeholder="ETC Hours"></td>
+		          </tr>
+		        </tbody>
+		      </table>
 		      <div class="col s12 m4 l2">
 		        <button class="btn waves-effect waves-light right" type="submit" name="action">Submit</button>
 		      </div>
@@ -231,7 +372,7 @@
 			    <img src="../images/ravi.jpg" alt="Contact Person">
 			    Ravi Mangipudi
 			  </div>
-      <a class="grey-text text-lighten-4 right" href="#!">Avatar</a>
+      <a class="grey-text text-lighten-4 right" href="#!">CAE</a>
       </div>
     </div>
   </footer>
