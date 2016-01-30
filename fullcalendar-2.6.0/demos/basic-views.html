@@ -82,8 +82,8 @@
 			]
 		});
 
-		$(".fc-toolbar > div:nth-child(2)").after("<h3>Finance Project</h3>");
-		$(".fc-day-header").after("<th class='fc-day-header fc-widget-header'>Project Total Hours <span #id='total-project-hours'> 50<span></th>")
+		$(".fc-toolbar > div:nth-child(2)").after("<h5>Finance Project</h5>");
+		$(".fc-day-header").after("<th class='fc-day-header fc-widget-header total-hours-header'>Total Project Hours: <span #id='total-project-hours'> 50<span></th>")
 		$(".button-collapse").sideNav();
 	});
 
@@ -109,6 +109,11 @@
 	th.fc-day-header.fc-widget-header.fc-fri {
     text-align: left;
     padding-left: 5%;
+	}
+
+	th.fc-day-header.fc-widget-header.total-hours-header {
+    text-align: right;
+    padding-right: 2%;
 	}
 
 </style>
