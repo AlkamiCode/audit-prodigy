@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8' />
+<link href='fullcalendar-2.6.0/fullcalendar.css' rel='stylesheet' />
+<link href='fullcalendar-2.6.0/fullcalendar.print.css' rel='stylesheet' media='print' />
+<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<script src='fullcalendar-2.6.0/lib/moment.min.js'></script>
+<script src='fullcalendar-2.6.0/lib/jquery.min.js'></script>
+<script src='fullcalendar-2.6.0/fullcalendar.min.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+<script>
+
+  $(document).ready(function() {
+
+    $('#calendar').fullCalendar({
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'basicDay,basicWeek,month'
+      },
+      editable: true,
+      eventLimit: true, // allow "more" link when too many events
+      events: [
+        {
+          title: 'All Day Event',
+          start: '2016-01-01'
+        },
+        {
+          title: 'Long Event',
+          start: '2016-01-07',
+          end: '2016-01-10'
+        },
+        {
+          id: 999,
+          title: 'Repeating Event',
+          start: '2016-01-09T16:00:00'
+        },
+        {
+          id: 999,
+          title: 'Repeating Event',
+          start: '2016-01-16T16:00:00'
+        },
+        {
+          title: 'Conference',
+          start: '2016-01-11',
+          end: '2016-01-13'
+        },
+        {
+          title: 'Meeting',
+          start: '2016-01-12T10:30:00',
+          end: '2016-01-12T12:30:00'
+        },
+        {
+          title: 'Lunch',
+          start: '2016-01-12T12:00:00'
+        },
+        {
+          title: 'Meeting',
+          start: '2016-01-12T14:30:00'
+        },
+        {
+          title: 'Happy Hour',
+          start: '2016-01-12T17:30:00'
+        },
+        {
+          title: 'Dinner',
+          start: '2016-01-12T20:00:00'
+        },
+        {
+          title: 'Birthday Party',
+          start: '2016-01-13T07:00:00'
+        },
+        {
+          title: 'Click for Google',
+          url: 'http://google.com/',
+          start: '2016-01-28'
+        }
+      ]
+    });
+
+    $(".fc-toolbar > div:nth-child(3)").after("<h5 class='project-name'>Finance Project</h5>");
+    $("div.fc-center > h2").css("font-size", "1.2em")
+    $(".fc-day-header").after("<th class='fc-day-header fc-widget-header total-hours-header'>Total Project Hours: <span #id='total-project-hours'> 50<span></th>")
+    $(".button-collapse").sideNav();
+    $(".fc-body").hide()
+
+    // var newEvent = new Object();
+
+    // newEvent.title = "Phase Ultra Ultra";
+    // newEvent.start = new Date();
+    // newEvent.allDay = false;
+    // $('#calendar').fullCalendar( 'renderEvent', newEvent );
+
+    // $(".fc-today").append("<div class='container'>" +
+    //    "<div class='card blue-grey darken-1'>" +
+    //       "<div class='card-content white-text pull-m4'>" +
+    //          "<div class='row>'>" +
+    //           "<div class='col s12 m12 l12'>" +
+    //              "<span class='card-title'>Phase: Travel</span>" +
+    //            "</div>" +
+    //           "<div class='col s3 m3'>70% Complete</div>" +
+    //            "<div class='progress col s7 m7'>" +
+    //             "<div class='determinate' style='width: 70%'></div>" +
+    //           "</div>" +
+    //          "</div>" +
+    //        "</div>" +
+
+    //      "<form action='#'>" +
+    //        "<div class='row'>" +
+    //          "<div class='col s12 m12 l12'>" +
+    //            "<div class='input-field col s3 m3 l4'>" +
+    //             "<input type='text' placeholder='hours'>" +
+    //            "</div>" +
+    //            "<div class='input-field col sm9 m9 l8'>" +
+    //              "<input type='text' placeholder='Comments' id='textarea1' class='materialize-textarea'>" +
+    //            "</div>" +
+    //          "</div>" +
+    //        "</div>" +
+
+    //        "<table class='col s12 m4 l8'>" +
+    //          "<thead>" +
+    //            "<tr>" +
+    //              "<th data-field='id'>Actual</th>" +
+    //              "<th data-field='name'>Scheduled</th>" +
+    //              "<th data-field='price'>Remaining</th>" +
+    //              "<th data-field='price'>ETC</th>" +
+    //            "</tr>" +
+    //          "</thead>" +
+
+    //          "<tbody>" +
+    //            "<tr>" +
+    //              "<td>100</td>" +
+    //              "<td>800</td>" +
+    //              "<td>700</td>" +
+    //              "<td><input type='text' placeholder='ETC Hours'></td>" +
+    //            "</tr>" +
+    //          "</tbody>" +
+    //        "</table>" +
+
+    //        "<div class='col s12 m4 l2'>" +
+    //          "<button class='btn waves-effect waves-light right' type='submit' name='action'>Submit</button>" +
+    //        "</div>" +
+    //      "</form>" +
+    //    "</div>" +
+    // "</div>")
+
+  });
+
+</script>
+<style>
+
+  html {
+    line-height: 2;
+  }
+
+  body {
+    padding: 0;
+    font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+    font-size: 14px;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: #8c489f;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  #calendar {
+    max-width: 95%;
+    margin: 0 auto;
+  }
+
+  .nav-wrapper {
+    background-color: #2bbbad;
+  }
+
+  th.fc-day-header.fc-widget-header.fc {
+    text-align: left;
+    padding-left: 5%;
+  }
+
+  th.fc-day-header.fc-widget-header.total-hours-header {
+    text-align: right;
+    padding-right: 2%;
+  }
+
+  .project-name {
+    text-align: center;
+  }
+
+  footer.page-footer {
+    padding-top: 1px;
+    background-color: #2bbbad;
+  }
+
+  img.responsive-img {
+    height: 42px;
+    margin-top: 5%;
+    margin-left: 5%;
+  }
+
+  .card-content.white-text {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+
+  .card.blue-grey.darken-1 {
+    margin-bottom: 15%;
+  }
+
+  .fc th, .fc td {
+    border-width: 0px;
+  }
+
+  .blue-grey.darken-1 {
+    background-color: #4E4E88 !important;
+  }
+
+  button {
+    background-color: #8c489f;
+  }
+
+  .fc-toolbar {
+    margin-top: 1em;
+  }
+
+  .fc-center {
+    margin-top: 3%;
+  }
+
+  .project-name {
+    margin-top: 0px;
+  }
+
+  .side-nav {
+    background-color: #8c489f;
+  }
+
+  .side-nav a {
+    color: white;
+  }
+
+  .side-nav li:hover, .side-nav li.active {
+    background-color: #8c489f;
+  }
+
+</style>
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo"><img class="responsive-img" src="fullcalendar-2.6.0/images/citi.png"/></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+  <main>
+
+    <div id="calendar">
+    </div>
+
+    <div class="container">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text pull-m4">
+          <div class="row>">
+            <div class="col s12 m12 l12">
+              <span class="card-title">Phase: Travel</span>
+            </div>
+            <div class="col s3 m3">70% Complete</div>
+            <div class="progress col s7 m7">
+              <div class="determinate" style="width: 70%"></div>
+            </div>
+          </div>
+        </div>
+
+        <form action="#">
+          <div class="row">
+            <div class="col s12 m12 l12">
+              <div class="input-field col s3 m3 l4">
+                <input type="text" placeholder="hours">
+              </div>
+              <div class="input-field col sm9 m9 l8">
+                <input type="text" placeholder="Comments" id="textarea1" class="materialize-textarea">
+              </div>
+            </div>
+          </div>
+
+          <table class="col s12 m4 l8">
+            <thead>
+              <tr>
+                <th data-field="id">Actual</th>
+                <th data-field="name">Scheduled</th>
+                <th data-field="price">Remaining</th>
+                <th data-field="price">ETC</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>100</td>
+                <td>800</td>
+                <td>700</td>
+                <td><input type="text" placeholder="ETC Hours"></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="col s12 m4 l2">
+            <button class="btn waves-effect waves-light right" type="submit" name="action">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+      <div class="container">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text pull-m4">
+          <div class="row>">
+            <div class="col s12 m12 l12">
+              <span class="card-title">Phase: Field Work</span>
+            </div>
+            <div class="col s3 m3">30% Complete</div>
+            <div class="progress col s7 m7">
+              <div class="determinate" style="width: 30%"></div>
+            </div>
+          </div>
+        </div>
+
+        <form action="#">
+          <div class="row">
+            <div class="col s12 m12 l12">
+              <div class="input-field col s3 m3 l4">
+                <input type="text" placeholder="hours">
+              </div>
+              <div class="input-field col sm9 m9 l8">
+                <input type="text" placeholder="Comments" id="textarea1" class="materialize-textarea">
+              </div>
+            </div>
+          </div>
+
+          <table class="col s12 m4 l8">
+            <thead>
+              <tr>
+                <th data-field="id">Actual</th>
+                <th data-field="name">Scheduled</th>
+                <th data-field="price">Remaining</th>
+                <th data-field="price">ETC</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>50</td>
+                <td>400</td>
+                <td>350</td>
+                <td><input type="text" placeholder="ETC Hours"></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="col s12 m4 l2">
+            <button class="btn waves-effect waves-light right" type="submit" name="action">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+        <div class="chip">
+          <img src="fullcalendar-2.6.0/images/ravi.jpg" alt="Contact Person">
+          Ravi Mangipudi
+        </div>
+      <a class="grey-text text-lighten-4 right" href="#!">CAE</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
