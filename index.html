@@ -181,7 +181,7 @@
     background-color: #2bbbad;
   }
 
-  th.fc-day-header.fc-widget-header.fc {
+  th.fc-day-header.fc-widget-header.fc-sat {
     text-align: left;
     padding-left: 5%;
   }
@@ -196,7 +196,11 @@
   }
 
   footer.page-footer {
-    padding-top: 1px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding-top: 0px;
     background-color: #2bbbad;
   }
 
@@ -251,6 +255,10 @@
 
   .side-nav li:hover, .side-nav li.active {
     background-color: #8c489f;
+  }
+
+  .card .card-action {
+    border-top: 0px;
   }
 
 </style>
@@ -325,6 +333,7 @@
             <button class="btn waves-effect waves-light right" type="submit" name="action">Submit</button>
           </div>
         </form>
+        <div class="card-action"></div>
       </div>
     </div>
 
@@ -376,6 +385,7 @@
             <button class="btn waves-effect waves-light right" type="submit" name="action">Submit</button>
           </div>
         </form>
+        <div class="card-action"></div>
       </div>
     </div>
   </main>
