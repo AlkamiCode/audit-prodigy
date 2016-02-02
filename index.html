@@ -88,67 +88,6 @@
     $(".button-collapse").sideNav();
     $(".fc-body").hide()
     $(".fc-toolbar button").prop("disabled",true)
-
-    // var newEvent = new Object();
-
-    // newEvent.title = "Phase Ultra Ultra";
-    // newEvent.start = new Date();
-    // newEvent.allDay = false;
-    // $('#calendar').fullCalendar( 'renderEvent', newEvent );
-
-    // $(".fc-today").append("<div class='container'>" +
-    //    "<div class='card blue-grey darken-1'>" +
-    //       "<div class='card-content white-text pull-m4'>" +
-    //          "<div class='row>'>" +
-    //           "<div class='col s12 m12 l12'>" +
-    //              "<span class='card-title'>Phase: Travel</span>" +
-    //            "</div>" +
-    //           "<div class='col s3 m3'>70% Complete</div>" +
-    //            "<div class='progress col s7 m7'>" +
-    //             "<div class='determinate' style='width: 70%'></div>" +
-    //           "</div>" +
-    //          "</div>" +
-    //        "</div>" +
-
-    //      "<form action='#'>" +
-    //        "<div class='row'>" +
-    //          "<div class='col s12 m12 l12'>" +
-    //            "<div class='input-field col s3 m3 l4'>" +
-    //             "<input type='text' placeholder='hours'>" +
-    //            "</div>" +
-    //            "<div class='input-field col sm9 m9 l8'>" +
-    //              "<input type='text' placeholder='Comments' id='textarea1' class='materialize-textarea'>" +
-    //            "</div>" +
-    //          "</div>" +
-    //        "</div>" +
-
-    //        "<table class='col s12 m4 l8'>" +
-    //          "<thead>" +
-    //            "<tr>" +
-    //              "<th data-field='id'>Actual</th>" +
-    //              "<th data-field='name'>Scheduled</th>" +
-    //              "<th data-field='price'>Remaining</th>" +
-    //              "<th data-field='price'>ETC</th>" +
-    //            "</tr>" +
-    //          "</thead>" +
-
-    //          "<tbody>" +
-    //            "<tr>" +
-    //              "<td>100</td>" +
-    //              "<td>800</td>" +
-    //              "<td>700</td>" +
-    //              "<td><input type='text' placeholder='ETC Hours'></td>" +
-    //            "</tr>" +
-    //          "</tbody>" +
-    //        "</table>" +
-
-    //        "<div class='col s12 m4 l2'>" +
-    //          "<button class='btn waves-effect waves-light right' type='submit' name='action'>Submit</button>" +
-    //        "</div>" +
-    //      "</form>" +
-    //    "</div>" +
-    // "</div>")
-
   });
 
 </script>
@@ -165,7 +104,6 @@
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    /*background-color: #8c489f;*/
   }
 
   main {
@@ -182,13 +120,13 @@
     top: 0;
     right: 0;
     left: 0;
-    height: 8%;
+    height: 65px;
     z-index: 5;
     background-color: #9e9e9e;
   }
 
   nav {
-    background-color: #9e9e9e;
+    background-color: white;
   }
 
   th.fc-day-header.fc-widget-header.fc-sat {
@@ -316,6 +254,42 @@
     margin-bottom: 10%;
   }
 
+  #ap-logo {
+    position: fixed;
+    bottom: 0;
+    left: 18%;
+  }
+
+  img.ap-footer-logo {
+    display: none;
+  }
+
+  .fc th {
+    text-align: left;
+  }
+
+  @media screen and (min-width: 990px) {
+    img.ap-footer-logo {
+      display: inline;
+      float: right;
+      width: 15%;
+      margin-top: 2%;
+    }
+
+    #employee-title {
+      display: none;
+    }
+
+    main {
+      padding-right: 10%;
+      padding-left: 10%;
+    }
+
+    #calendar {
+      max-width: 70%;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -332,6 +306,7 @@
         <li><a href="#">Home</a></li>
         <li><a href="#">Projects</a></li>
         <li><a href="#">Logout</a></li>
+        <div id="ap-logo"><a href="#"><img class="responsive-img" src="fullcalendar-2.6.0/images/audit-prodigy-logo.png"/></a></div>
       </ul>
     </div>
   </nav>
@@ -452,7 +427,8 @@
           <img src="fullcalendar-2.6.0/images/ravi.jpg" alt="Contact Person">
           Ravi Mangipudi
         </div>
-      <a class="grey-text text-lighten-4 right" href="#!">CAE</a>
+      <a id="employee-title" class="grey-text text-lighten-4 right" href="#!">CAE</a>
+      <a class="grey-text text-lighten-4 right" href="#!"><img class="ap-footer-logo" src="fullcalendar-2.6.0/images/audit-prodigy-logo.png"/></a>
       </div>
     </div>
   </footer>
