@@ -84,7 +84,7 @@
 
     $(".fc-toolbar > div:nth-child(3)").after("<h5 class='project-name'>Finance Project</h5>");
     $("div.fc-center > h2").css("font-size", "1.2em")
-    $(".fc-day-header").after("<th class='fc-day-header fc-widget-header total-hours-header'>Total Project Hours: <span #id='total-project-hours'> 50<span></th>")
+    $(".fc-day-header").after("<th class='fc-day-header fc-widget-header total-hours-header'>Total Project Hrs: <span #id='total-project-hours'> 645<span></th>")
     $(".button-collapse").sideNav();
     $(".fc-body").hide()
     $(".fc-toolbar button").prop("disabled",true)
@@ -104,6 +104,7 @@
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    background-color: #B1AAB1;
   }
 
   main {
@@ -158,7 +159,7 @@
   }
 
   img.responsive-img {
-    height: 42px;
+    height: 52px;
     margin-top: 5%;
     margin-left: 5%;
   }
@@ -210,25 +211,6 @@
     border-top: 0px;
   }
 
-  ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:    black;
-  }
-
-  ::-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-     color:    black;
-     opacity:  1;
-  }
-  ::-moz-placeholder { /* Mozilla Firefox 19+ */
-     color:    black;
-     opacity:  1;
-  }
-  :-ms-input-placeholder { /* Internet Explorer 10-11 */
-     color:    black;
-  }
-  :placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
-    color:    black;
-  }
-
   .btn, .btn-large {
     background-color: #003B70;
   }
@@ -245,6 +227,14 @@
     background-color: #225130;
   }
 
+  .determinate.over-hundred {
+    background-color: #D9261C;
+  }
+
+  td.over-hundred {
+    color: #D9261C;
+  }
+
   input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
     border-bottom: 1px solid #225130;
     box-shadow: 0 1px 0 0 #225130;
@@ -252,6 +242,7 @@
 
   .container {
     margin-bottom: 10%;
+    width: 95%;
   }
 
   #ap-logo {
@@ -266,6 +257,10 @@
 
   .fc th {
     text-align: left;
+  }
+
+  #sidenav-overlay {
+    background-color: rgba(0,0,0,0);
   }
 
   @media screen and (min-width: 990px) {
@@ -287,6 +282,10 @@
 
     #calendar {
       max-width: 70%;
+    }
+
+    .container {
+      width: 70%;
     }
   }
 
@@ -315,7 +314,7 @@
     <div id="calendar">
     </div>
 
-    <div class="container">
+<div class="container">
       <div class="card blue-grey darken-1">
         <div class="card-content white-text pull-m4">
           <div class="row>">
@@ -336,7 +335,7 @@
                 <input type="number" placeholder="hours">
               </div>
               <div class="input-field col sm9 m9 l8">
-                <input type="text" placeholder="Comments" id="textarea1" class="materialize-textarea">
+                <input type="text" placeholder="comments" id="textarea1" class="materialize-textarea">
               </div>
             </div>
           </div>
@@ -352,10 +351,10 @@
             </thead>
             <tbody>
               <tr>
+                <td>70</td>
                 <td>100</td>
-                <td>800</td>
-                <td>700</td>
-                <td><input type="number" placeholder="ETC Hours"></td>
+                <td>30</td>
+                <td><input type="number" placeholder="hours"></td>
               </tr>
             </tbody>
           </table>
@@ -367,7 +366,7 @@
       </div>
     </div>
 
-      <div class="container">
+    <div class="container">
       <div class="card blue-grey darken-1">
         <div class="card-content white-text pull-m4">
           <div class="row>">
@@ -385,10 +384,10 @@
           <div class="row">
             <div class="col s12 m12 l12">
               <div class="input-field col s3 m3 l4">
-                <input type="text" placeholder="hours">
+                <input type="number" placeholder="hours">
               </div>
               <div class="input-field col sm9 m9 l8">
-                <input type="text" placeholder="Comments" id="textarea1" class="materialize-textarea">
+                <input type="text" placeholder="comments" id="textarea1" class="materialize-textarea">
               </div>
             </div>
           </div>
@@ -407,7 +406,111 @@
                 <td>50</td>
                 <td>400</td>
                 <td>350</td>
-                <td><input type="text" placeholder="ETC Hours"></td>
+                <td><input type="number" placeholder="hours"></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="col s12 m4 l2">
+            <button class="btn waves-effect waves-light right" type="submit" name="action">Submit</button>
+          </div>
+        </form>
+        <div class="card-action"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text pull-m4">
+          <div class="row>">
+            <div class="col s12 m12 l12">
+              <span class="card-title">Documentation</span>
+            </div>
+            <div class="col s3 m3">100% Complete</div>
+            <div class="progress col s7 m7">
+              <div class="determinate" style="width: 100%"></div>
+            </div>
+          </div>
+        </div>
+
+        <form action="#">
+          <div class="row">
+            <div class="col s12 m12 l12">
+              <div class="input-field col s3 m3 l4">
+                <input type="number" placeholder="hours">
+              </div>
+              <div class="input-field col sm9 m9 l8">
+                <input type="text" placeholder="comments" id="textarea1" class="materialize-textarea">
+              </div>
+            </div>
+          </div>
+
+          <table class="col s12 m4 l8">
+            <thead>
+              <tr>
+                <th data-field="id">Actual</th>
+                <th data-field="name">Scheduled</th>
+                <th data-field="price">Remaining</th>
+                <th data-field="price">ETC</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>400</td>
+                <td>400</td>
+                <td>0</td>
+                <td><input type="number" placeholder="hours"></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="col s12 m4 l2">
+            <button class="btn waves-effect waves-light right" type="submit" name="action">Submit</button>
+          </div>
+        </form>
+        <div class="card-action"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text pull-m4">
+          <div class="row>">
+            <div class="col s12 m12 l12">
+              <span class="card-title">Planning</span>
+            </div>
+            <div class="col s3 m3">100% Complete</div>
+            <div class="progress col s7 m7">
+              <div class="determinate over-hundred" style="width: 100%"></div>
+            </div>
+          </div>
+        </div>
+
+        <form action="#">
+          <div class="row">
+            <div class="col s12 m12 l12">
+              <div class="input-field col s3 m3 l4">
+                <input type="number" placeholder="hours">
+              </div>
+              <div class="input-field col sm9 m9 l8">
+                <input type="text" placeholder="comments" id="textarea1" class="materialize-textarea">
+              </div>
+            </div>
+          </div>
+
+          <table class="col s12 m4 l8">
+            <thead>
+              <tr>
+                <th data-field="id">Actual</th>
+                <th data-field="name">Scheduled</th>
+                <th data-field="price">Remaining</th>
+                <th data-field="price">ETC</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>125</td>
+                <td>100</td>
+                <td class="over-hundred">- 25</td>
+                <td><input type="number" placeholder="hours"></td>
               </tr>
             </tbody>
           </table>
