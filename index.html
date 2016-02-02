@@ -165,7 +165,7 @@
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background-color: #8c489f;
+    /*background-color: #8c489f;*/
   }
 
   main {
@@ -184,11 +184,11 @@
     left: 0;
     height: 8%;
     z-index: 5;
-    background-color: #2bbbad;
+    background-color: #9e9e9e;
   }
 
   nav {
-    background-color: #2bbbad;
+    background-color: #9e9e9e;
   }
 
   th.fc-day-header.fc-widget-header.fc-sat {
@@ -216,7 +216,7 @@
     left: 0;
     padding-top: 0px;
     z-index: 2;
-    background-color: #2bbbad;
+    background-color: #9e9e9e;
   }
 
   img.responsive-img {
@@ -226,22 +226,18 @@
   }
 
   .card-content.white-text {
-    padding-bottom: 0;
-    padding-top: 0;
+    padding: 0;
   }
 
   .card.blue-grey.darken-1 {
     margin-bottom: 5%;
     padding-right: 3%;
     padding-left: 3%;
+    /*background-color: #084072 !important;*/
   }
 
   .fc th, .fc td {
     border-width: 0px;
-  }
-
-  .blue-grey.darken-1 {
-    background-color: #4E4E88 !important;
   }
 
   button {
@@ -261,7 +257,7 @@
   }
 
   .side-nav {
-    background-color: #8c489f;
+    background-color: #546e7a;
   }
 
   .side-nav a {
@@ -274,6 +270,46 @@
 
   .card .card-action {
     border-top: 0px;
+  }
+
+  ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    black;
+  }
+
+  ::-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+     color:    black;
+     opacity:  1;
+  }
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+     color:    black;
+     opacity:  1;
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+     color:    black;
+  }
+  :placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+    color:    black;
+  }
+
+  .btn, .btn-large {
+    background-color: #003B70;
+  }
+
+  .btn:hover, .btn-large:hover {
+    background-color: #225130;
+  }
+
+  .progress {
+    background-color: #98B59B ;
+  }
+
+  .progress .determinate {
+    background-color: #225130;
+  }
+
+  input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #225130;
+    box-shadow: 0 1px 0 0 #225130;
   }
 
 </style>
